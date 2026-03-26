@@ -14,9 +14,12 @@ This will allow assessing the models' generalization capabilities and comparing 
 
 The results will be analyzed using metrics such as accuracy and F1-score. The final outcome of the project will be a comparison of model effectiveness and an evaluation of whether more advanced architectures handle out-of-domain data better.
 
+## Test Protocols
+To ensure the reliability of the evaluation and prevent overfitting, strict test protocols will be enforced. During the initial modeling phase on the source dataset, a **k-fold cross-validation** technique will be employed. The final unbiased estimators will be assessed on dedicated withheld test subsets across all domains.
+
 ## Models
 The project will compare models of varying complexity:
-* Logistic Regression + TF-IDF
+* Support Vector Machine (SVM) + TF-IDF
 * LSTM
 * BERT
 * DistilBERT
@@ -24,6 +27,8 @@ The project will compare models of varying complexity:
 ## Proposed Datasets
 * **IMDb Dataset** (review, rating, pos/neg) - movie reviews
   * Link: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
+* **Rotten Tomatoes Dataset** (review text, rating) - critical movie reviews
+  * Link: https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset
 * **Amazon Reviews Dataset** (review title, review text, rating) - product reviews
   * Link: https://www.kaggle.com/datasets/dongrelaxman/amazon-reviews-dataset
 * **Yelp Reviews** (text, stars) - restaurant and service reviews

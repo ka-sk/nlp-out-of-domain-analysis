@@ -5,7 +5,7 @@
 \usepackage{hyperref}
 
 \title{Temat: Out-of-Domain Text Classification}
-\author{Selega Kamil,\\ Sielska Małgorzata,\\ Szczepaniak Katarzyna,\\ Szeląg Magdalena}
+\author{Selega Kamil (288780),\\ Sielska Małgorzata (266560),\\ Szczepaniak Katarzyna (261895),\\ Szeląg Magdalena (266857)}
 \date{}
 
 \begin{document}
@@ -23,6 +23,15 @@ Modele zostaną wytrenowane na jednym zbiorze danych (np. recenzje filmowe z IMD
 
 Pozwoli to ocenić zdolność modeli do generalizacji oraz porównać spadek jakości klasyfikacji między środowiskiem in-domain i out-of-domain.
 Wyniki będą analizowane za pomocą metryk takich jak accuracy oraz F1-score, a końcowym efektem projektu będzie porównanie skuteczności modeli oraz ocena, czy bardziej zaawansowane architektury lepiej radzą sobie poza domeną treningową.
+
+\section*{Studium literaturowe}
+Problem radzenia sobie przez modele z danymi pochodzącymi spoza domeny treningowej (tzw. Out-of-Domain, OOD) od dawna jest ważnym tematem w przetwarzaniu języka naturalnego. Yang i in. \cite{yang2023outofdistributiongeneralizationtextclassification} oraz Lang i in. \cite{lang2023surveyoutofdistributiondetectionnlp} opisują rozwój i wyzwania w tej dziedzinie. Zwracają uwagę, że choć dzisiejsze modele świetnie działają na danych podobnych do tych z treningu (in-domain), to ich skuteczność drastycznie spada, gdy stykają się z nowym typem tekstów.
+
+Początki tych badań sięgają klasycznej adaptacji domenowej, którą początkowo rozwijano dla prostszych klasyfikatorów statystycznych, co pokazali Daumé III i Marcu \cite{DBLP:journals/corr/abs-1109-6341}. Dziś badacze skupiają się na trudniejszych kwestiach, takich jak wykrywanie nowych, nieznanych danych bez korzystania z gotowych etykiet, co analizują Jin i in. \cite{9741317}. Z kolei Zheng i in. \cite{9052492} sprawdzali, jak dobrze systemy konwersacyjne (chatboty) radzą sobie z nowymi intencjami użytkowników na danych, których wcześniej nie widziały.
+
+Spadek skuteczności na danych testowych z innych domen dotyka bardzo różnych zadań tekstowych. Zaobserwowano to na przykład przy projektowaniu systemów tłumaczenia maszynowego \cite{haddow-koehn-2012-analysing}, przy szukaniu relacji i powiązań w skomplikowanych tekstach medycznych \cite{9648338}, a nawet przy dzieleniu na słowa tajskiego tekstu, w którym znajdują się obcojęzyczne wtrącenia \cite{Limkonchotiwat2021HandlingCA}. Co ciekawe, dokładnie te same problemy z generalizacją na nowe typy danych pojawiają się zupełnie poza NLP – chociażby przy klasyfikacji terenu na zdjęciach satelitarnych \cite{Kolodner2022EvaluatingDL}. 
+
+Żeby sprostać tym wyzwaniom, w ostatnich latach szeroko stosuje się potężne algorytmy oparte na modelu Transformer (jak np. BERT) oraz klasyczne warianty sieci rekurencyjnych. Sharma \cite{Sharma2025ACA} porównał takie modele i potwierdził ich świetną skuteczność w zadaniach kategoryzacji tekstu. Użyteczność podobnych klasyfikatorów w systemach pomagających wyszukiwać informacje badał z kolei Oday i in. \cite{Oday2025TextCF}. Bardzo ważnym podejściem – szczególnie gdy zależy nam na mniejszym zużyciu zasobów – są zoptymalizowane modele z rodziny BERT, jak DistilBERT. Barbon i Akabane \cite{s22218184} na przykładzie angielskich i portugalskich tekstów pokazali, że mimo mniejszego rozmiaru sieci, radzi ona sobie znakomicie z danymi OOD. Słuszność pójścia w mniejsze modele potwierdzają także Muffo i Bertino \cite{muffo2023bertinoitaliandistilbertmodel} na zbiorach dla języka włoskiego. Wracając do naszego głównego zadania – badanie przeprowadzone przez Yuana \cite{Yuan2026EmpiricalSO} dokładnie z użyciem recenzji filmowych (zbiór IMDb) dowiodło, że odpowiednio dostrojony model DistilBERT wypada w klasyfikacji sentymentu znacznie lepiej niż łączone architektury CNN i LSTM. Należy też pamiętać, że na nowych rodzajach danych modele mogą zachowywać się w sposób niezrozumiały – wpływ zmiany domeny na trafność tłumaczenia i analiz przez algorytmy badali Chrysostomou i Aletras \cite{chrysostomou2022empiricalstudyexplanationsoutofdomain}.
 
 \section*{Porównywane modele}
 Porównane zostaną modele o różnym poziomie złożoności:

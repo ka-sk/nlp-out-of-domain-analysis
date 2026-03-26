@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{hyperref}
+
+\title{Temat: Out-of-Domain Text Classification}
+\author{Selega Kamil,\\ Sielska Małgorzata,\\ Szczepaniak Katarzyna,\\ Szeląg Magdalena}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Opis Tematu}
+Projekt dotyczy analizy odporności modeli klasyfikacji tekstu na zmianę domeny danych (out-of-domain text classification). Celem jest sprawdzenie, w jakim stopniu modele uczone na jednym typie tekstów potrafią poprawnie klasyfikować dane pochodzące z innego źródła.
+
+W ramach projektu planowane jest przeprowadzenie zadania klasyfikacji sentymentu (pozytywny / negatywny).
+Modele zostaną wytrenowane na jednym zbiorze danych (np. recenzje filmowe z IMDb Dataset), a następnie testowane:
+\begin{itemize}
+    \item na danych z tej samej domeny (in-domain),
+    \item na danych z innej domeny (out-of-domain, np. Amazon Reviews).
+\end{itemize}
+
+Pozwoli to ocenić zdolność modeli do generalizacji oraz porównać spadek jakości klasyfikacji między środowiskiem in-domain i out-of-domain.
+Wyniki będą analizowane za pomocą metryk takich jak accuracy oraz F1-score, a końcowym efektem projektu będzie porównanie skuteczności modeli oraz ocena, czy bardziej zaawansowane architektury lepiej radzą sobie poza domeną treningową.
+
+\section*{Porównywane modele}
+Porównane zostaną modele o różnym poziomie złożoności:
+\begin{itemize}
+    \item Regresja logistyczna + TF-IDF
+    \item LSTM
+    \item BERT
+    \item DistilBERT
+\end{itemize}
+
+\section*{Proponowane zbiory danych}
+\begin{itemize}
+    \item \textbf{IMDb Dataset} (review, rating, pos/neg) - recenzje filmów \cite{imdb_dataset}.
+    \item \textbf{Amazon Reviews Dataset} (review title, review text, rating) - recenzje produktów \cite{amazon_reviews}.
+    \item \textbf{Yelp Reviews} (text, stars) - recenzje restauracji i usług \cite{yelp_dataset}.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}

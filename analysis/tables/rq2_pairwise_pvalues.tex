@@ -1,0 +1,12 @@
+\begin{tabularx}{\textwidth}{@{}llYYYYY@{}}
+\hline
+Model A & Model B & $\overline{\Delta}$F1 & $p$ (t-test) & $p$ (t, Bonf.) & $p$ (Wilcoxon) & $p$ (W, Bonf.) \\
+\hline
+SVM & LSTM & 0.047 & $<$0.001 & $<$0.001*** & $<$0.001 & $<$0.001*** \\
+SVM & MiniLM & $-$0.010 & 0.246 & 1.000 & 0.517 & 1.000 \\
+SVM & DistilBERT & $-$0.054 & $<$0.001 & $<$0.001*** & $<$0.001 & $<$0.001*** \\
+LSTM & MiniLM & $-$0.058 & $<$0.001 & $<$0.001*** & $<$0.001 & $<$0.001*** \\
+LSTM & DistilBERT & $-$0.101 & $<$0.001 & $<$0.001*** & $<$0.001 & $<$0.001*** \\
+MiniLM & DistilBERT & $-$0.043 & $<$0.001 & $<$0.001*** & $<$0.001 & $<$0.001*** \\
+\hline
+\end{tabularx}
